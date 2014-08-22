@@ -1,0 +1,8 @@
+<div class="container" ng-controller="IndexCtrl">
+	<form>
+		<input type="text" ng-model="newentries.name">
+		<input type="submit" value="Add" ng-click="add()">
+	</form>
+	<p>{{newentries.name}}</p>
+	<p ng-repeat="entry in entries">{{entry.name}}</p>
+</div>
