@@ -5,7 +5,6 @@ app = angular.module('blog', ["ngResource"])
 	$scope.entries = Entry.query()
 
 	$scope.add = ->
-		console.log Entry 
 		addentry = Entry.save($scope.newentries)
 
 		$scope.entries.push(addentry)

@@ -6,18 +6,24 @@ class EntriesController < ApplicationController
 	end
 
 	def show
-		respond_with Entity.find(params[:id])
+		respond_with Entry.find(params[:id])
 	end
 
 	def create
-		respond_with Entity.create(params[:entry])
+		respond_with Entry.create(entry_params)
 	end
 
 	def update
-		respond_with Entity.update(params[:id] , params[:entry])
+		respond_with Entry.update(entry_params)
 	end
 
 	def destroy
-		respond_with Entity.destroy(params[:id])
+		respond_with Entry.destroy(params[:id])
 	end
+
+	private
+
+	def entry_params
+  	params.require(:entry).permit!
+  end
 end
